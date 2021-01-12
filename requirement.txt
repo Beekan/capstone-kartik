@@ -1,0 +1,10 @@
+click
+pytest
+pylint
+ipython
+flask
+pylint-flask
+Flask-API
+flasgger
+pytest-flask
+
