@@ -6,4 +6,4 @@ docker  image ls
 
 #step 3
 # Running Flask App 
-docker run -p 8000:5001 api 
+docker run -p 8000:5001 capstonekartik 

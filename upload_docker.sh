@@ -6,13 +6,13 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-dockerpath=kramiyer/drwho
+dockerpath=kramiyer/capstonekram
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
 docker login --username kramiyer
-docker tag ml-kubermnetes $dockerpath
+docker tag capstonekartik $dockerpath
 
 # Step 3:
 # Push image to a docker repository.
