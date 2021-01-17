@@ -9,7 +9,7 @@ dockerpath=kramiyer/capstonekram
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run capstonekartik --image=$dockerpath --port=80
+kubectl run capstonekartik --image=$dockerpath:capstonekartik --port=80
 
 
 # Step 3:
@@ -18,4 +18,4 @@ kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward capstonekartik 7000:80
+kubectl port-forward capstonekartik 8000:5001 
