@@ -11,5 +11,15 @@ pipeline
                 slackSend message:"Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
             }
         }
+        stage('Linting DockerFile')
+        {
+            steps
+            {
+                script
+                {
+                    sh "hadolint Dockerfile"
+                }
+            }
+        }
     }
 }
