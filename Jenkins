@@ -8,16 +8,21 @@ pipeline
             steps
             {
                 sh 'echo Building...'
-                slackSend message:"Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                slackSend message:"Build Started - ${env.JOB_NAME}"
             }
         }
-        stage('Linting DockerFile')
+        stage('set up')
         {
             steps
             {
                 script
                 {
-                    sh "hadolint Dockerfile"
+                    docker.image('python:3.7.3-stretch').inside()
+                    {
+                        sh "make setup install lint"
+                       #sh "pip install --upgrade pip"
+                        #sh "pip install --trusted-host pypi.python.org -r requirement.txt"
+                    }
                 }
             }
         }
