@@ -7,7 +7,7 @@ pipeline
         {
             steps
             {
-                sh 'echo Building...'
+                'echo Building...'
                 slackSend message:"Build Started - ${env.JOB_NAME}"
             }
         }
