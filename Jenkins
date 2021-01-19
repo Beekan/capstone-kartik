@@ -11,12 +11,18 @@ pipeline
                 slackSend message:"Build Started - ${env.JOB_NAME}"
             }
         }
-        stage('Installign dependencies')
+        stage('linting')
         {
             steps
             {
-                sh 'pip install --upgrade pip'
-	            sh 'pip install --trusted-host pypi.python.org -r requirement.txt'   
+                script
+                {
+                    docker.image('hadolint/hadolint:latest-debian').inside()
+                    {
+                        sh 'hadolint ./Dockerfile 
+                        sh 'hadolint --ignore DL3042'
+                    }
+                }
             }
         }
         
