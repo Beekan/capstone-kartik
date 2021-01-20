@@ -6,7 +6,7 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-dockerpath=kramiyer/capstonekram
+dockerpath=kramiyer/capstonekramesh
 
 # Step 2:  
 # Authenticate & tag
