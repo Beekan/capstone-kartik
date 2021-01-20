@@ -20,6 +20,7 @@ pipeline
                     docker.image('hadolint/hadolint:latest-debian').inside()
                     {
                         sh 'hadolint Dockerfile'
+                        sh 'pylint web.py'
                         
                     }
                 }
