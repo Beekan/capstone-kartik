@@ -39,6 +39,7 @@ pipeline
                 script
                 {
                     docker.build registry + ":$BUILD_NUMBER"
+                    sh 'pylint web.py'
                 }
             }
         }
