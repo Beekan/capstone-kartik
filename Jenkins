@@ -3,7 +3,7 @@ pipeline
     agent any
     stages
     {
-        stage('Build and send initial slack message')
+        stage('initial slack message')
         {
             steps
             {
@@ -11,7 +11,7 @@ pipeline
                 slackSend message:"Build Started - ${env.JOB_NAME}"
             }
         }
-        stage('linting')
+        stage('linting Dockerfile')
         {
             steps
             {
@@ -20,8 +20,23 @@ pipeline
                     docker.image('hadolint/hadolint:latest-debian').inside()
                     {
                         sh 'hadolint Dockerfile'
-                        sh 'pylint web.py'
                         
+                        lackSend message:"Linting Dockefile- ${env.JOB_NAME}"
+                    }
+                }
+            }
+        }
+        stage('application linting')
+        {
+            steps
+            {
+                script
+                {
+                    docker.image('python:3.7.3-stretch').inside()
+                    {
+                        sh 'hadolint Dockerfile'
+                        
+                        lackSend message:"Linting application- ${env.JOB_NAME}"
                     }
                 }
             }
