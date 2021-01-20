@@ -39,7 +39,7 @@ pipeline
             {
                 script
                 {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" + capstone
                     slackSend message:"Built- ${env.JOB_NAME}- ${registry}- ${BUILD_NUMBER}"
                 }
             }
@@ -53,10 +53,20 @@ pipeline
                     docker.withRegistry('', registryCredential)
                     {
                         dockerImage.push()
+                        slackSend message:"Successfully pushed Docker image"
                     }
                 }
             }
         }
-        
+        stage('Deploy on aws')
+        {
+            steps
+            {
+                script
+                {
+                    
+                }
+            }
+        }
     }
 }
