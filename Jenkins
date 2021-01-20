@@ -20,7 +20,7 @@ pipeline
                     docker.image('hadolint/hadolint:latest-debian').inside()
                     {
                         sh 'hadolint ./Dockerfile'
-                        sh 'hadolint --ignore DL3042'
+                        
                     }
                 }
             }
