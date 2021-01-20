@@ -21,7 +21,7 @@ pipeline
                     {
                         sh 'hadolint Dockerfile'
                         
-                        lackSend message:"Linting Dockefile- ${env.JOB_NAME}"
+                        slackSend message:"Linting Dockefile- ${env.JOB_NAME}"
                     }
                 }
             }
@@ -36,7 +36,7 @@ pipeline
                     {
                         sh 'hadolint Dockerfile'
                         
-                        lackSend message:"Linting application- ${env.JOB_NAME}"
+                        slackSend message:"Linting application- ${env.JOB_NAME}"
                     }
                 }
             }
