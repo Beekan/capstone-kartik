@@ -58,15 +58,6 @@ pipeline
                 }
             }
         }
-        stage('Deploy on aws')
-        {
-            steps
-            {
-                script
-                {
-                    
-                }
-            }
-        }
+        s
     }
 }
