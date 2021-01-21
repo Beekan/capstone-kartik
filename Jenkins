@@ -59,6 +59,16 @@ pipeline
                 }
             }
         }
+        stage('setting context')
+        {
+            steps
+            {
+                withAWS(credentials: 'aws', region: 'us-west-2')
+                {
+                    sh 'aws eks --region us-east-1 update-kubeconfig --name capstonekram'
+                }
+            }
+        }
         stage('Deployment')
         {
             steps
