@@ -50,7 +50,8 @@ pipeline
             {
                 script
                 {
-                    docker.withRegistry('', registryCredential)
+                    #docker.withRegistry('', registryCredential) old docker credentials 
+                    withDockerRegistry([url:"", credentialsId: "dockerhub"])
                     {
                         dockerImage.push()
                         slackSend message:"Successfully pushed Docker image"
