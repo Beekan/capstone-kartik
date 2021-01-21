@@ -80,6 +80,10 @@ pipeline
                     {
                         sh 'kubectl config use-context arn:aws:eks:us-west-2:297516697101:cluster/capstonekram'
                         sh 'kubectl run capstonekartik --image=dockerImage'
+                        sh 'kubectl get nodes'
+                        sh 'kubectl get deployments'
+                        sh "kubectl get service/capstone"
+                        sh 'kubectl port-forward capstonekartik 8000:5001'
                         
                     }
                 }
