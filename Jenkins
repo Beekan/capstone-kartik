@@ -50,7 +50,7 @@ pipeline
             {
                 script
                 {
-                    #docker.withRegistry('', registryCredential) old docker credentials 
+                    
                     withDockerRegistry([url:"", credentialsId: "dockerhub"])
                     {
                         dockerImage.push()
