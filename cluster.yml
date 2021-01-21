@@ -93,8 +93,8 @@ spec:
     apiVersion: extensions/v1beta1
     kind: Deployment
     name: capstonekartik
-  minReplicas: 2
-  maxReplicas: 5
+  minReplicas: 1
+  maxReplicas: 3
   targetCPUUtilizationPercentage: 80
 
 ---
@@ -103,7 +103,7 @@ kind: Ingress
 metadata:
   name: capstonekartik
   annotations:
-    ingress.kubernetes.io/force-ssl-redirect: "true"
+    ingress.kubernetes.io/force-ssl-redirect: "false"
     kubernetes.io/ingress.class: "ingress-nginx"
     #Limit app to my personal IP
     #nginx.ingress.kubernetes.io/whitelist-source-range: "IP/32"
