@@ -7,10 +7,10 @@ WORKDIR /app
 COPY . web.py /app/
 COPY . /nlib /app/
 # Install packages from requirements.txt
-# hadolint ignore=DL3013,DL3042
+
 RUN pip install --upgrade pip &&\
     pip install --trusted-host pypi.python.org -r requirement.txt
-
+# hadolint ignore=DL3013,DL3042
 # Expose port 80
 # EXPOSE 80
 
