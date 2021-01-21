@@ -59,17 +59,6 @@ pipeline
                 }
             }
         }
-        stage('setting context')
-        {
-            steps
-            {
-                withAWS(credentials: 'aws', region: 'us-west-2')
-                {
-                    sh 'aws eks --region us-west-2 update-kubeconfig --name capstonekram'
-                    slackSend message:"Setting context to config file was sucessfull."
-                }
-            }
-        }
         stage('Deployment')
         {
             steps
@@ -79,11 +68,11 @@ pipeline
                     withAWS(credentials: 'aws', region: 'us-west-2')
                     {
                         sh 'kubectl config use-context arn:aws:eks:us-west-2:297516697101:cluster/capstonekram'
-                        sh 'kubectl run capstonekartik --image=kramiyer/capstonekramesh:$BUILD_NUMBER'
+                        sh 'kubectl run capstonekramesh--image=kramiyer/capstonekramesh:$BUILD_NUMBER'
                         sh 'kubectl get nodes'
                         sh 'kubectl get deployments'
-                        sh "kubectl get service/capstone"
-                        sh 'kubectl port-forward capstonekartik 8000:5001'
+                        sh "kubectl get service/capstonekartik"
+                        sh 'kubectl port-forward capstonekramesh 8000:5001'
                         
                     }
                 }
