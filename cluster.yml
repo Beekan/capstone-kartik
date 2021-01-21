@@ -43,13 +43,6 @@ spec:
           "web.py"
           ]
         imagePullPolicy: Always
-        resources:
-          limits:
-            memory: 64Mi
-            cpu: 250m
-          requests:
-            memory: 32Mi
-            cpu: 200m
         ports:
           - containerPort: 9080
         livenessProbe:
