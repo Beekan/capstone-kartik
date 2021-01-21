@@ -39,7 +39,7 @@ pipeline
             {
                 script
                 {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    sh 'docker build -t capstonekartik .'
                     slackSend message:"Built- ${env.JOB_NAME}- ${registry}- ${BUILD_NUMBER}"
                 }
             }
