@@ -39,9 +39,8 @@ spec:
       - name: udacity
         image: kramiyer/capstonekramesh
         command: [
-          "/bin/bash", 
-          "-c", 
-          "npm run serve"
+          "python",
+          "web.py"
           ]
         imagePullPolicy: Always
         resources:
