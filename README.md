@@ -27,4 +27,13 @@ We will create a CI/CD pipeline for swagger api with rolling deployment. The Swa
 
 3. Once we run the above command, if it runs succesfully you should see two stacks created in cloud formation and cluster created under EKS.
 
-(screenshot/1cloudformation.png)
+   ![Slack initial message](screenshot/1cloudformation.png)
+   ![Slack initial message](screenshot/2.clusters.png)
+
+4. When a pipeline fails , it will show up in red like in the screenshot below.
+
+   ![Slack initial message](screenshot/3.jenkinfailedpipeline)
+
+5. Once the issues are fixed and everything woks fine. Pipelien should look all green.
+
+   ![Slack initial message](screenshot/4.jenkinpipeline)
