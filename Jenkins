@@ -79,7 +79,7 @@ pipeline
             {
                 withAWS(credentials: 'aws', region: 'us-west-2')
                 {
-                    sh "kubectl rollout status deployments/capstonekramesh
+                    sh 'kubectl rollout status deployments/capstonekramesh'
 
                 }
                 
