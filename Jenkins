@@ -65,7 +65,8 @@ pipeline
             {
                 withAWS(credentials: 'aws', region: 'us-west-2')
                 {
-                    sh 'aws eks --region us-east-1 update-kubeconfig --name capstonekram'
+                    sh 'aws eks --region us-west-2 update-kubeconfig --name capstonekram'
+                    slackSend message:"Setting context to config file was sucessfull."
                 }
             }
         }
@@ -77,9 +78,9 @@ pipeline
                 {
                     withAWS(credentials: 'aws', region: 'us-west-2')
                     {
-                        sh '''
-                                kubectl config use-context arn:aws:eks:us-west-2:297516697101:cluster/capstonekram
-                        '''
+                        sh 'kubectl config use-context arn:aws:eks:us-west-2:297516697101:cluster/capstonekram'
+                        sh 'kubectl run capstonekartik --image=dockerImage'
+                        
                     }
                 }
             }
