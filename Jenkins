@@ -53,7 +53,8 @@ pipeline
                     
                     withDockerRegistry([url:"", credentialsId: "dockerhub"])
                     {
-                        dockerImage.push()
+                        sh 'docker tag capstonekartik kramiyer/capstonekramesh'
+                        sh 'docker push kramiyer/capstonekramesh'
                         slackSend message:"Successfully pushed Docker image"
                     }
                 }
