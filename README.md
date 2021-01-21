@@ -31,8 +31,11 @@ We will create a CI/CD pipeline for swagger api with rolling deployment. The Swa
 
    ![Slack initial message](screenshot/1cloudformation.png)
 
-4. When a pipeline fails , it will show up in red like in the screenshot below.
+4. When a pipeline fails , it will show up in red like in the screenshot below. Depending on the stage where it fails
+   Failing linting of Docker file.
+   ![lintingfailure](screenshot/8.linting failure.png)
 
+   Failing at building docker stage itself.
    ![fail pipeline](screenshot/3.pipelinefail.png)
 
 5. Once the issues are fixed and everything woks fine. Pipelien should look all green.
