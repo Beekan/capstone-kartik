@@ -68,7 +68,7 @@ pipeline
                     withAWS(credentials: 'aws', region: 'us-west-2')
                     {
                         sh 'kubectl config use-context arn:aws:eks:us-west-2:297516697101:cluster/capstonekartik'
-                        sh "kubectl apply -f cluster.yaml
+                        sh 'kubectl apply -f cluster.yaml'
                         sh 'kubectl get nodes'
                         
                         
