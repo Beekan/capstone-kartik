@@ -27,5 +27,4 @@ We will create a CI/CD pipeline for swagger api with rolling deployment. The Swa
 
 3. Once we run the above command, if it runs succesfully you should see two stacks created in cloud formation and cluster created under EKS.
 
-(screenshot/1cloudformation
-)
+(screenshot/1cloudformation.png)
